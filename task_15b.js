@@ -11,35 +11,30 @@
 
 const numbers = [1, 9, 5, 17, -10, 11, 16, 0];
 
-function findBiggestNuber(e) {
-  console.log(e);
-} // findBiggestNuber
-findBiggestNuber("Result of function findBiggestNumber is:");
-
-function findBiggestNumber() {
-  console.log(Math.max(...numbers));
-}
-findBiggestNumber();
-
-// findFirstEvenNumber
-findFirstEvenNumber("Result of function findFirstEvenNumber is:");
-console.log(numbers.find((e) => e % 2 == 0));
-function findFirstEvenNumber(e) {
-  console.log(e);
-}
-findFirstEvenPositiveNumber(
-  "Result of function findFirstEvenPositiveNumber is:"
-);
-console.log(numbers.find((e) => e % 2 == 0 && e > 0));
-
-// findFirstEvenPositiveNumber
-function findFirstEvenPositiveNumber(e) {
-  console.log(e);
+function findBiggestNumber(numbers) {
+  var max = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (max <= numbers[i]) {
+      max = numbers[i];
+    }
+  }
+  console.log(max);
+  return max;
 }
 
-findPositiveNumbers("Result of function findPositiveNumbers is:");
-// findPositiveNumbers
-console.log(numbers.find((e) => e != 0 && e > 0));
-function findPositiveNumbers(e) {
-  console.log(e);
+function findFirstEvenNumber(numbers) {
+  return numbers.find((e) => e % 2 == 0);
 }
+
+function findFirstEvenPositiveNumber(numbers) {
+  return numbers.find((e) => e % 2 == 0 && e > 0);
+}
+
+function findPositiveNumbers(numbers) {
+  return numbers.find((e) => e != 0 && e > 0);
+}
+
+findBiggestNumber(numbers);
+findPositiveNumbers(numbers);
+findFirstEvenNumber(numbers);
+findFirstEvenPositiveNumber(numbers);
